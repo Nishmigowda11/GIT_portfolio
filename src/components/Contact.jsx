@@ -31,14 +31,14 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log("Service ID:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
-    console.log("Template ID:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID);
-    console.log("Public Key:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
+    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Nishmitha",
@@ -46,7 +46,7 @@ const Contact = () => {
           to_email: "nishmithakm948@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setLoading(false);
